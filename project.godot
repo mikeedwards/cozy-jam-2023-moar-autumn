@@ -1,0 +1,34 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Moar Autumn"
+config/tags=PackedStringArray("entries", "prototype")
+run/main_scene="res://World/main.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
+boot_splash/bg_color=Color(0.615686, 0.776471, 0.847059, 1)
+boot_splash/image="res://Assets/logo.png"
+boot_splash/fullsize=false
+config/icon="res://Assets/icon.svg"
+boot_splash/minimum_display_time=500
+
+[dotnet]
+
+project/assembly_name="autumn_jam"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[rendering]
+
+renderer/rendering_method.mobile="gl_compatibility"
