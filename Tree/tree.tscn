@@ -1,0 +1,165 @@
+[gd_scene load_steps=7 format=3 uid="uid://drspm216mrsea"]
+
+[ext_resource type="Script" path="res://Tree/tree.gd" id="1_exp2f"]
+[ext_resource type="Texture2D" uid="uid://koygmvef5dh5" path="res://Assets/icon.svg" id="2_gmd8y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7uw1"]
+radius = 61.5183
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dkwe4"]
+radius = 60.7063
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_buu4y"]
+radius = 62.6279
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_myr13"]
+radius = 63.5315
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_exp2f")
+
+[node name="Stump" type="StaticBody2D" parent="."]
+position = Vector2(0, -66)
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Stump"]
+position = Vector2(1, 1)
+texture = ExtResource("2_gmd8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stump"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("CircleShape2D_n7uw1")
+
+[node name="TrunkSegment01" type="Node2D" parent="."]
+
+[node name="Trunk01" type="RigidBody2D" parent="TrunkSegment01"]
+position = Vector2(1, -128)
+mass = 0.2
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="TrunkSegment01/Trunk01"]
+position = Vector2(1, -63)
+texture = ExtResource("2_gmd8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment01/Trunk01"]
+position = Vector2(1.5, -64)
+shape = SubResource("CircleShape2D_dkwe4")
+
+[node name="JointLeft" type="DampedSpringJoint2D" parent="TrunkSegment01"]
+position = Vector2(-64, -157)
+node_a = NodePath("../Trunk01")
+node_b = NodePath("../../Stump")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="JointRight" type="DampedSpringJoint2D" parent="TrunkSegment01"]
+position = Vector2(64, -157)
+node_a = NodePath("../Trunk01")
+node_b = NodePath("../../Stump")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="PinJoint2D" type="PinJoint2D" parent="TrunkSegment01"]
+position = Vector2(1, -129)
+node_a = NodePath("../../Stump")
+node_b = NodePath("../Trunk01")
+bias = 0.5
+disable_collision = false
+
+[node name="TrunkSegment02" type="Node2D" parent="."]
+position = Vector2(0, -130)
+
+[node name="Trunk02" type="RigidBody2D" parent="TrunkSegment02"]
+position = Vector2(1, -128)
+mass = 0.2
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="TrunkSegment02/Trunk02"]
+position = Vector2(1, -63)
+texture = ExtResource("2_gmd8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment02/Trunk02"]
+position = Vector2(1.5, -64)
+shape = SubResource("CircleShape2D_buu4y")
+
+[node name="JointLeft" type="DampedSpringJoint2D" parent="TrunkSegment02"]
+position = Vector2(-64, -150)
+node_a = NodePath("../Trunk02")
+node_b = NodePath("../../TrunkSegment01/Trunk01")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="JointRight" type="DampedSpringJoint2D" parent="TrunkSegment02"]
+position = Vector2(64, -151)
+node_a = NodePath("../Trunk02")
+node_b = NodePath("../../TrunkSegment01/Trunk01")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="PinJoint2D" type="PinJoint2D" parent="TrunkSegment02"]
+position = Vector2(1, 1)
+node_a = NodePath("../../TrunkSegment01/Trunk01")
+node_b = NodePath("../Trunk02")
+bias = 0.5
+disable_collision = false
+
+[node name="TrunkSegment03" type="Node2D" parent="."]
+position = Vector2(0, -260)
+
+[node name="Trunk03" type="RigidBody2D" parent="TrunkSegment03"]
+position = Vector2(1, -128)
+mass = 0.2
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="TrunkSegment03/Trunk03"]
+position = Vector2(1, -63)
+texture = ExtResource("2_gmd8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment03/Trunk03"]
+position = Vector2(1.5, -64)
+shape = SubResource("CircleShape2D_myr13")
+
+[node name="JointLeft" type="DampedSpringJoint2D" parent="TrunkSegment03"]
+position = Vector2(-64, -149)
+node_a = NodePath("../Trunk03")
+node_b = NodePath("../../TrunkSegment02/Trunk02")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="JointRight" type="DampedSpringJoint2D" parent="TrunkSegment03"]
+position = Vector2(64, -149)
+node_a = NodePath("../Trunk03")
+node_b = NodePath("../../TrunkSegment02/Trunk02")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="PinJoint2D" type="PinJoint2D" parent="TrunkSegment03"]
+position = Vector2(1, 131)
+node_a = NodePath("../../TrunkSegment02/Trunk02")
+node_b = NodePath("../Trunk03")
+bias = 0.5
+disable_collision = false

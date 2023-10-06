@@ -29,6 +29,16 @@ project/assembly_name="autumn_jam"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_style/plugin.cfg", "res://addons/gut/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_1="trees"
+2d_physics/layer_2="pan"
+2d_physics/layer_3="spirit"
+
 [rendering]
 
 renderer/rendering_method.mobile="gl_compatibility"
