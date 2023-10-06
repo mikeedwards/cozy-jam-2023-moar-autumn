@@ -16,11 +16,14 @@ func _physics_process(_delta):
 	if hit[2]:
 		trunk[2].apply_central_impulse(Vector2(600 * _delta,0))
 
-func _on_trunk_area_01_body_entered(body):
+func _on_trunk_area_01_body_entered(body: Pan):
 	hit[0] = true
+	body.register_hit(trunk[0])
 
-func _on_trunk_area_02_body_entered(body):
+func _on_trunk_area_02_body_entered(body: Pan):
 	hit[1] = true
+	body.register_hit(trunk[1])
 
-func _on_trunk_area_03_body_entered(body):
+func _on_trunk_area_03_body_entered(body: Pan):
 	hit[2] = true
+	body.register_hit(trunk[2])
