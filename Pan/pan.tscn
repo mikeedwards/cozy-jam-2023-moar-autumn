@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://coah1v1o3ifg0"]
+
+[ext_resource type="Script" path="res://Pan/pan.gd" id="1_rctmi"]
+[ext_resource type="Texture2D" uid="uid://koygmvef5dh5" path="res://Assets/icon.svg" id="2_2yn86"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8q3vx"]
+radius = 64.9384
+
+[node name="Pan" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_rctmi")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, 128)
+texture = ExtResource("2_2yn86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 128)
+shape = SubResource("CircleShape2D_8q3vx")
+debug_color = Color(0.847059, 0.376471, 0, 0.419608)

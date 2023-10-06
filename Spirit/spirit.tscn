@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpf77nqribrok"]
+
+[ext_resource type="Script" path="res://Spirit/spirit.gd" id="1_kgdte"]
+[ext_resource type="Texture2D" uid="uid://koygmvef5dh5" path="res://Assets/icon.svg" id="2_2wsqq"]
+[ext_resource type="PackedScene" uid="uid://coah1v1o3ifg0" path="res://Pan/pan.tscn" id="3_8kf2h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1su6k"]
+radius = 64.2806
+
+[node name="Spirit" type="CharacterBody2D"]
+position = Vector2(0, 324)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_kgdte")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_2wsqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1su6k")
+debug_color = Color(0.631373, 0.345098, 1, 0.419608)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Pan" parent="." instance=ExtResource("3_8kf2h")]
