@@ -39,6 +39,7 @@ enabled=PackedStringArray("res://addons/godot_style/plugin.cfg", "res://addons/g
 2d_physics/layer_2="pan"
 2d_physics/layer_3="spirit"
 2d_physics/layer_4="tree_areas"
+2d_physics/layer_5="world"
 
 [rendering]
 

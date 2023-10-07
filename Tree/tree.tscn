@@ -38,6 +38,7 @@ shape = SubResource("CircleShape2D_n7uw1")
 [node name="Trunk01" type="RigidBody2D" parent="TrunkSegment01"]
 position = Vector2(1, -128)
 mass = 0.2
+gravity_scale = 0.0
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="TrunkSegment01/Trunk01"]
@@ -92,18 +93,21 @@ position = Vector2(0, -130)
 [node name="Trunk02" type="RigidBody2D" parent="TrunkSegment02"]
 position = Vector2(1, -128)
 mass = 0.2
+gravity_scale = 0.0
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="TrunkSegment02/Trunk02"]
-position = Vector2(1, -63)
+position = Vector2(1, -49)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_gmd8y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment02/Trunk02"]
-position = Vector2(1.5, -64)
+position = Vector2(1.5, -50)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_buu4y")
 
 [node name="JointLeft" type="DampedSpringJoint2D" parent="TrunkSegment02"]
-position = Vector2(-64, -150)
+position = Vector2(-46, -178)
 node_a = NodePath("../Trunk02")
 node_b = NodePath("../../TrunkSegment01/Trunk01")
 bias = 0.5
@@ -114,7 +118,7 @@ stiffness = 48.0
 damping = 0.1
 
 [node name="JointRight" type="DampedSpringJoint2D" parent="TrunkSegment02"]
-position = Vector2(64, -151)
+position = Vector2(50, -178)
 node_a = NodePath("../Trunk02")
 node_b = NodePath("../../TrunkSegment01/Trunk01")
 bias = 0.5
@@ -137,27 +141,32 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment02/TrunkArea02"]
-position = Vector2(2.5, -63)
+position = Vector2(2.5, -49)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_cr1v8")
+debug_color = Color(0.847059, 0.376471, 0, 0.419608)
 
 [node name="TrunkSegment03" type="Node2D" parent="."]
 position = Vector2(0, -260)
 
 [node name="Trunk03" type="RigidBody2D" parent="TrunkSegment03"]
-position = Vector2(1, -128)
+position = Vector2(1, -95)
 mass = 0.2
+gravity_scale = 0.0
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="TrunkSegment03/Trunk03"]
-position = Vector2(1, -63)
+position = Vector2(1, -32)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_gmd8y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment03/Trunk03"]
-position = Vector2(1.5, -64)
+position = Vector2(1.5, -33)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_myr13")
 
 [node name="JointLeft" type="DampedSpringJoint2D" parent="TrunkSegment03"]
-position = Vector2(-64, -149)
+position = Vector2(-46, -128)
 node_a = NodePath("../Trunk03")
 node_b = NodePath("../../TrunkSegment02/Trunk02")
 bias = 0.5
@@ -168,7 +177,7 @@ stiffness = 48.0
 damping = 0.1
 
 [node name="JointRight" type="DampedSpringJoint2D" parent="TrunkSegment03"]
-position = Vector2(64, -149)
+position = Vector2(50, -128)
 node_a = NodePath("../Trunk03")
 node_b = NodePath("../../TrunkSegment02/Trunk02")
 bias = 0.5
@@ -190,8 +199,10 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment03/TrunkArea03"]
-position = Vector2(2.5, -192)
+position = Vector2(2.5, -128)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_myr13")
+debug_color = Color(0.980392, 0.137255, 0, 0.419608)
 
 [connection signal="body_entered" from="TrunkSegment01/TrunkArea01" to="." method="_on_trunk_area_01_body_entered"]
 [connection signal="body_entered" from="TrunkSegment02/TrunkArea02" to="." method="_on_trunk_area_02_body_entered"]
