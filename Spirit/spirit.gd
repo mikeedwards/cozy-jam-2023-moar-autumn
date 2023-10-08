@@ -7,13 +7,17 @@ extends CharacterBody2D
 @export var IMPULSE_LIMIT: float = 0.2
 
 var impulse_timer = 0
+var score = 0
 
 @onready var camera = $Camera2D
 @onready var sprite = $AnimatedSprite2D
+@onready var score_label: Label = $"Camera2D/Control/ScoreLabel"
+@onready var audio: AudioStreamPlayer2D = $ImpactAudio
 
 func _ready():
 	$AnimatedSprite2D.connect("animation_finished", _play_idle, CONNECT_DEFERRED)
 	_play_idle()
+	score_label.text = "Score: %d" % score
 	
 func _play_idle():
 	sprite.play("idle")
@@ -48,3 +52,6 @@ func _physics_process(delta):
 
 func _on_oak_marker_smacked():
 	sprite.play("boom")
+	score += 100
+	score_label.text = "Score: %d" % score
+	audio.play()

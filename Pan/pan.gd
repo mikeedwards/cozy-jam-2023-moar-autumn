@@ -9,6 +9,8 @@ var spinning = false
 var av = 0
 var current_cool_down: float = 0.0
 
+@onready var woosh = $WooshAudio
+
 func _ready():
 	collision_layer = 0
 
@@ -32,6 +34,7 @@ func _process(delta):
 		spinning = true
 		collision_layer = 2
 		current_cool_down = COOL_DOWN
+		woosh.play()
 		
 	visible = spinning
 

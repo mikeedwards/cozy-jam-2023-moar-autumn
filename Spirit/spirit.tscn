@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dpf77nqribrok"]
+[gd_scene load_steps=33 format=3 uid="uid://dpf77nqribrok"]
 
 [ext_resource type="Script" path="res://Spirit/spirit.gd" id="1_kgdte"]
 [ext_resource type="Texture2D" uid="uid://csvpnn3t8orrt" path="res://Assets/spirit/spirit_idle_0001.png" id="2_eyqj1"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://cip77hmgv51ln" path="res://Assets/spirit/spirit_poof_0006.png" id="15_sq58l"]
 [ext_resource type="Texture2D" uid="uid://cujcq60vxaone" path="res://Assets/spirit/spirit_poof_0007.png" id="16_lfr5i"]
 [ext_resource type="Texture2D" uid="uid://0dl0lluaruq7" path="res://Assets/spirit/spirit_poof_0008.png" id="17_vtohj"]
+[ext_resource type="FontFile" uid="uid://bu2j75k4nvdem" path="res://Assets/Kenney Blocks.ttf" id="26_ag0sw"]
+[ext_resource type="AudioStream" uid="uid://c261jygdmj2yy" path="res://Assets/impactPlate_heavy_004.ogg" id="27_e8yj1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f05mj"]
 animations = [{
@@ -120,8 +122,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1su6k"]
 radius = 64.2806
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r618n"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[sub_resource type="Theme" id="Theme_sx1k7"]
+default_font = ExtResource("26_ag0sw")
+Label/font_sizes/font_size = 30
+Label/styles/normal = SubResource("StyleBoxFlat_r618n")
+
 [node name="Spirit" type="CharacterBody2D"]
-position = Vector2(0, 324)
+position = Vector2(240, 294)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_kgdte")
@@ -138,4 +148,25 @@ debug_color = Color(0.631373, 0.345098, 1, 0.419608)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Control" type="Control" parent="Camera2D"]
+z_index = 10
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -960.0
+offset_top = -600.0
+offset_right = 960.0
+offset_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="ScoreLabel" type="Label" parent="Camera2D/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_sx1k7")
+text = "Score: 00000"
+
 [node name="Pan" parent="." instance=ExtResource("3_8kf2h")]
+
+[node name="ImpactAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_e8yj1")

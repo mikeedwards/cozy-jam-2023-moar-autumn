@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Tree/tree.gd" id="1_exp2f"]
 [ext_resource type="Texture2D" uid="uid://bsyg0ltlv6l5x" path="res://Assets/bark/bark_stump.png" id="2_gj6ta"]
 [ext_resource type="Texture2D" uid="uid://3vnx68t5bsm3" path="res://Assets/bark/bark_trunk03.png" id="2_h0a5r"]
-[ext_resource type="Texture2D" uid="uid://b65ivxk3ue3hi" path="res://Assets/logo.png" id="3_pleud"]
+[ext_resource type="Texture2D" uid="uid://jvygn33jrds1" path="res://Assets/maple_001.png" id="3_60d7y"]
 [ext_resource type="Texture2D" uid="uid://cjw5dgxtlskxf" path="res://Assets/bark/bark_trunk01.png" id="3_sy7e4"]
 [ext_resource type="Texture2D" uid="uid://dbu0urgsmw6rq" path="res://Assets/bark/bark_trunk02.png" id="4_jqx7t"]
 
@@ -26,8 +26,8 @@ damping_min = 63.587
 damping_max = 86.957
 angle_min = 60.0
 angle_max = 120.0
-scale_min = 0.01
-scale_max = 0.02
+scale_min = 0.1
+scale_max = 0.2
 color = Color(1, 0, 0, 1)
 hue_variation_max = 0.15
 turbulence_enabled = true
@@ -53,8 +53,8 @@ damping_min = 63.587
 damping_max = 86.957
 angle_min = 60.0
 angle_max = 120.0
-scale_min = 0.01
-scale_max = 0.02
+scale_min = 0.1
+scale_max = 0.2
 color = Color(1, 0, 0, 1)
 hue_variation_max = 0.15
 turbulence_enabled = true
@@ -84,8 +84,8 @@ damping_min = 63.587
 damping_max = 86.957
 angle_min = 60.0
 angle_max = 120.0
-scale_min = 0.01
-scale_max = 0.02
+scale_min = 0.1
+scale_max = 0.2
 color = Color(1, 0, 0, 1)
 hue_variation_max = 0.15
 turbulence_enabled = true
@@ -125,7 +125,7 @@ position = Vector2(-2, -274)
 emitting = false
 amount = 500
 process_material = SubResource("ParticleProcessMaterial_jul8g")
-texture = ExtResource("3_pleud")
+texture = ExtResource("3_60d7y")
 one_shot = true
 explosiveness = 1.0
 
@@ -193,7 +193,7 @@ position = Vector2(-1, -237)
 emitting = false
 amount = 300
 process_material = SubResource("ParticleProcessMaterial_g337d")
-texture = ExtResource("3_pleud")
+texture = ExtResource("3_60d7y")
 one_shot = true
 explosiveness = 1.0
 
@@ -254,11 +254,11 @@ position = Vector2(2, -169)
 shape = SubResource("CapsuleShape2D_r71d3")
 
 [node name="LeafParticles01" type="GPUParticles2D" parent="TrunkSegment01/Trunk01"]
-position = Vector2(-1, -192)
+position = Vector2(-1, -191)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_0f7t7")
-texture = ExtResource("3_pleud")
+texture = ExtResource("3_60d7y")
 one_shot = true
 explosiveness = 1.0
 
