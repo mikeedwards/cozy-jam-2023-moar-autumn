@@ -30,7 +30,7 @@ func _process(delta):
 		rotation = 0
 		collision_layer = 0
 		
-	if Input.is_action_just_pressed("ui_down") and current_cool_down <= 0.0:
+	if Input.is_key_pressed(KEY_CTRL) and current_cool_down <= 0.0:
 		spinning = true
 		collision_layer = 2
 		current_cool_down = COOL_DOWN

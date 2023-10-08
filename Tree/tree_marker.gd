@@ -12,7 +12,6 @@ var child_tree: SmackableTree = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("smacked", spirit._on_oak_marker_smacked)
-	pass # Replace with function body.
 
 func smackarooni():
 	smacked.emit()
