@@ -20,6 +20,10 @@ boot_splash/fullsize=false
 config/icon="res://Assets/icon.svg"
 boot_splash/minimum_display_time=500
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="autumn_jam"
@@ -43,4 +47,5 @@ enabled=PackedStringArray("res://addons/godot_style/plugin.cfg", "res://addons/g
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method.mobile="gl_compatibility"

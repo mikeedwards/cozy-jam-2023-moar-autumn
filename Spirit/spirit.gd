@@ -5,7 +5,21 @@ extends CharacterBody2D
 @export var JUMP_IMPULSE: float = 18000.0
 @export var GRAVITY: float = 4.0
 @export var IMPULSE_LIMIT: float = 0.2
+
 var impulse_timer = 0
+
+@onready var camera = $Camera2D
+@onready var sprite = $AnimatedSprite2D
+
+func _ready():
+	$AnimatedSprite2D.connect("animation_finished", _play_idle, CONNECT_DEFERRED)
+	_play_idle()
+	
+func _play_idle():
+	sprite.play("idle")
+
+func _process(_delta):
+	camera.position.y = (position.y + get_tree().get_root().size.y * 0.5) * -.2
 
 func _physics_process(delta):
 	var impulse = JUMP_IMPULSE
@@ -19,6 +33,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		vy += Vector2.UP * impulse * delta
 		impulse_timer = IMPULSE_LIMIT
+		sprite.play("poof")
+
 		
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().reload_current_scene()
@@ -28,3 +44,7 @@ func _physics_process(delta):
 	velocity = vx + vy
 		
 	move_and_slide()
+
+
+func _on_oak_marker_smacked():
+	sprite.play("boom")

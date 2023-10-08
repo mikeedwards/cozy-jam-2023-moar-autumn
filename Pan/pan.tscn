@@ -1,21 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://coah1v1o3ifg0"]
 
 [ext_resource type="Script" path="res://Pan/pan.gd" id="1_rctmi"]
-[ext_resource type="Texture2D" uid="uid://koygmvef5dh5" path="res://Assets/icon.svg" id="2_2yn86"]
+[ext_resource type="Texture2D" uid="uid://bs58vaclwngpg" path="res://Assets/fry_pan.png" id="2_upjl6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8q3vx"]
-radius = 64.9384
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_22k8l"]
+radius = 50.0
+height = 136.0
 
 [node name="Pan" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_rctmi")
+ANG_SPEED = -20.0
+ANG_ACCEL = -100.0
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(0, 128)
-texture = ExtResource("2_2yn86")
+texture = ExtResource("2_upjl6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 128)
-shape = SubResource("CircleShape2D_8q3vx")
+position = Vector2(0, 176)
+shape = SubResource("CapsuleShape2D_22k8l")
 debug_color = Color(0.847059, 0.376471, 0, 0.419608)

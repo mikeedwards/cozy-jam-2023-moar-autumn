@@ -35,5 +35,5 @@ func _process(delta):
 		
 	visible = spinning
 
-func register_hit(segment: Node2D):
+func register_hit(_segment: Node2D):
 	collision_layer = 0
