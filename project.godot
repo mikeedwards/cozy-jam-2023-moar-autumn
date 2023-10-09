@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Moar Autumn"
 config/tags=PackedStringArray("entries", "prototype")
-run/main_scene="res://World/main.tscn"
+run/main_scene="res://World/title.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/bg_color=Color(0.615686, 0.776471, 0.847059, 1)
 boot_splash/image="res://Assets/logo.png"

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://j2wrbnhhri8r"]
+
+[ext_resource type="Script" path="res://World/outro.gd" id="1_6ywoh"]
+[ext_resource type="Texture2D" uid="uid://dtqxy6i0wmh80" path="res://Assets/outro_card_01.png" id="2_phggq"]
+
+[node name="Outro" type="Node2D"]
+script = ExtResource("1_6ywoh")
+
+[node name="OutroCard01" type="Sprite2D" parent="."]
+position = Vector2(962, 600)
+texture = ExtResource("2_phggq")

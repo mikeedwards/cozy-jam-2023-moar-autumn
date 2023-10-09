@@ -39,9 +39,8 @@ func _physics_process(delta):
 		impulse_timer = IMPULSE_LIMIT
 		sprite.play("poof")
 
-		
 	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://World/title.tscn")
 
 	impulse_timer -= delta
 
@@ -49,9 +48,13 @@ func _physics_process(delta):
 		
 	move_and_slide()
 
-
+## Show the player characters reaction on impact
 func _on_oak_marker_smacked():
 	sprite.play("boom")
 	score += 100
 	score_label.text = "Score: %d" % score
 	audio.play()
+
+
+func _on_psl_target_body_entered(body):
+	get_tree().change_scene_to_file("res://World/outro.tscn")
