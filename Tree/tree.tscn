@@ -1,0 +1,333 @@
+[gd_scene load_steps=19 format=3 uid="uid://drspm216mrsea"]
+
+[ext_resource type="Script" path="res://Tree/tree.gd" id="1_exp2f"]
+[ext_resource type="Texture2D" uid="uid://bsyg0ltlv6l5x" path="res://Assets/bark/bark_stump.png" id="2_gj6ta"]
+[ext_resource type="Texture2D" uid="uid://3vnx68t5bsm3" path="res://Assets/bark/bark_trunk03.png" id="2_h0a5r"]
+[ext_resource type="Texture2D" uid="uid://jvygn33jrds1" path="res://Assets/maple_001.png" id="3_60d7y"]
+[ext_resource type="Texture2D" uid="uid://cjw5dgxtlskxf" path="res://Assets/bark/bark_trunk01.png" id="3_sy7e4"]
+[ext_resource type="Texture2D" uid="uid://b3yny4iy0q5xs" path="res://Assets/leaf/leaf_trunk03.png" id="3_y2py0"]
+[ext_resource type="Texture2D" uid="uid://dbu0urgsmw6rq" path="res://Assets/bark/bark_trunk02.png" id="4_jqx7t"]
+[ext_resource type="Texture2D" uid="uid://dt70fff7i062q" path="res://Assets/leaf/leaf_trunk02.png" id="6_frwfx"]
+[ext_resource type="Texture2D" uid="uid://jhd76xf51rgp" path="res://Assets/leaf/leaf_trunk01.png" id="8_o2rd5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_myr13"]
+radius = 63.5315
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jul8g"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+gravity = Vector3(0, 75, 0)
+initial_velocity_min = 800.0
+initial_velocity_max = 1000.0
+angular_velocity_min = 93.91
+angular_velocity_max = 93.91
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 5.43
+linear_accel_max = 16.3
+damping_min = 63.587
+damping_max = 86.957
+angle_min = 60.0
+angle_max = 120.0
+scale_min = 0.1
+scale_max = 0.2
+color = Color(1, 0, 0, 1)
+hue_variation_max = 0.15
+turbulence_enabled = true
+turbulence_noise_strength = 0.45
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ls1tr"]
+radius = 38.0
+height = 258.667
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g337d"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+gravity = Vector3(0, 75, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 800.0
+angular_velocity_min = 93.91
+angular_velocity_max = 93.91
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 5.43
+linear_accel_max = 16.3
+damping_min = 63.587
+damping_max = 86.957
+angle_min = 60.0
+angle_max = 120.0
+scale_min = 0.1
+scale_max = 0.2
+color = Color(1, 0, 0, 1)
+hue_variation_max = 0.15
+turbulence_enabled = true
+turbulence_noise_strength = 0.45
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53t6f"]
+radius = 39.3333
+height = 250.667
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r71d3"]
+radius = 51.0
+height = 206.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0f7t7"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+gravity = Vector3(0, 75, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 700.0
+angular_velocity_min = 93.91
+angular_velocity_max = 93.91
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 5.43
+linear_accel_max = 16.3
+damping_min = 63.587
+damping_max = 86.957
+angle_min = 60.0
+angle_max = 120.0
+scale_min = 0.1
+scale_max = 0.2
+color = Color(1, 0, 0, 1)
+hue_variation_max = 0.15
+turbulence_enabled = true
+turbulence_noise_strength = 0.45
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cfvso"]
+radius = 49.0
+height = 242.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7uw1"]
+radius = 61.5183
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_exp2f")
+
+[node name="TrunkSegment03" type="Node2D" parent="."]
+position = Vector2(0, -260)
+
+[node name="Trunk03" type="RigidBody2D" parent="TrunkSegment03"]
+position = Vector2(1, -95)
+mass = 0.2
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="TrunkSegment03/Trunk03"]
+position = Vector2(0, -260)
+scale = Vector2(0.37895, 0.37895)
+texture = ExtResource("2_h0a5r")
+
+[node name="LeafSprite" type="Sprite2D" parent="TrunkSegment03/Trunk03"]
+position = Vector2(0, -260)
+texture = ExtResource("3_y2py0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment03/Trunk03"]
+position = Vector2(0.5, -274)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_myr13")
+
+[node name="LeafParticles03" type="GPUParticles2D" parent="TrunkSegment03/Trunk03"]
+position = Vector2(-2, -274)
+emitting = false
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_jul8g")
+texture = ExtResource("3_60d7y")
+one_shot = true
+explosiveness = 1.0
+
+[node name="JointLeft" type="DampedSpringJoint2D" parent="TrunkSegment03"]
+position = Vector2(-19, -369)
+node_a = NodePath("../Trunk03")
+node_b = NodePath("../../TrunkSegment02/Trunk02")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="JointRight" type="DampedSpringJoint2D" parent="TrunkSegment03"]
+position = Vector2(22, -369)
+node_a = NodePath("../Trunk03")
+node_b = NodePath("../../TrunkSegment02/Trunk02")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="PinJoint2D" type="PinJoint2D" parent="TrunkSegment03"]
+position = Vector2(0, -334)
+node_a = NodePath("../../TrunkSegment02/Trunk02")
+node_b = NodePath("../Trunk03")
+bias = 0.5
+disable_collision = false
+
+[node name="TrunkArea03" type="Area2D" parent="TrunkSegment03"]
+position = Vector2(-1, -241)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment03/TrunkArea03"]
+position = Vector2(2.5, -128)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_myr13")
+debug_color = Color(0.980392, 0.137255, 0, 0.419608)
+
+[node name="TrunkSegment02" type="Node2D" parent="."]
+position = Vector2(0, -130)
+
+[node name="Trunk02" type="RigidBody2D" parent="TrunkSegment02"]
+position = Vector2(1, -128)
+mass = 0.2
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="TrunkSegment02/Trunk02"]
+position = Vector2(1, -226)
+scale = Vector2(0.929424, 0.857297)
+texture = ExtResource("4_jqx7t")
+
+[node name="LeafSprite" type="Sprite2D" parent="TrunkSegment02/Trunk02"]
+position = Vector2(0, -243)
+texture = ExtResource("6_frwfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment02/Trunk02"]
+position = Vector2(1.5, -243)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("CapsuleShape2D_ls1tr")
+
+[node name="LeafParticles02" type="GPUParticles2D" parent="TrunkSegment02/Trunk02"]
+position = Vector2(-1, -237)
+emitting = false
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_g337d")
+texture = ExtResource("3_60d7y")
+one_shot = true
+explosiveness = 1.0
+
+[node name="JointLeft" type="DampedSpringJoint2D" parent="TrunkSegment02"]
+position = Vector2(-42, -316)
+node_a = NodePath("../Trunk02")
+node_b = NodePath("../../TrunkSegment01/Trunk01")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="JointRight" type="DampedSpringJoint2D" parent="TrunkSegment02"]
+position = Vector2(48, -316)
+node_a = NodePath("../Trunk02")
+node_b = NodePath("../../TrunkSegment01/Trunk01")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="PinJoint2D" type="PinJoint2D" parent="TrunkSegment02"]
+position = Vector2(1, -275)
+node_a = NodePath("../../TrunkSegment01/Trunk01")
+node_b = NodePath("../Trunk02")
+bias = 0.5
+disable_collision = false
+
+[node name="TrunkArea02" type="Area2D" parent="TrunkSegment02"]
+position = Vector2(0, -316)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment02/TrunkArea02"]
+position = Vector2(2.5, -49)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("CapsuleShape2D_53t6f")
+debug_color = Color(0.847059, 0.376471, 0, 0.419608)
+
+[node name="TrunkSegment01" type="Node2D" parent="."]
+
+[node name="Trunk01" type="RigidBody2D" parent="TrunkSegment01"]
+position = Vector2(1, -128)
+mass = 0.2
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="TrunkSegment01/Trunk01"]
+position = Vector2(1, -149)
+texture = ExtResource("3_sy7e4")
+
+[node name="LeafSprite" type="Sprite2D" parent="TrunkSegment01/Trunk01"]
+position = Vector2(0, -191)
+texture = ExtResource("8_o2rd5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment01/Trunk01"]
+position = Vector2(2, -169)
+shape = SubResource("CapsuleShape2D_r71d3")
+
+[node name="LeafParticles01" type="GPUParticles2D" parent="TrunkSegment01/Trunk01"]
+position = Vector2(-1, -191)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_0f7t7")
+texture = ExtResource("3_60d7y")
+one_shot = true
+explosiveness = 1.0
+
+[node name="JointLeft" type="DampedSpringJoint2D" parent="TrunkSegment01"]
+position = Vector2(-62, -225)
+node_a = NodePath("../Trunk01")
+node_b = NodePath("../../Stump")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="JointRight" type="DampedSpringJoint2D" parent="TrunkSegment01"]
+position = Vector2(66, -225)
+node_a = NodePath("../Trunk01")
+node_b = NodePath("../../Stump")
+bias = 0.5
+disable_collision = false
+length = 64.0
+rest_length = 16.0
+stiffness = 48.0
+damping = 0.1
+
+[node name="PinJoint2D" type="PinJoint2D" parent="TrunkSegment01"]
+position = Vector2(1, -191)
+node_a = NodePath("../../Stump")
+node_b = NodePath("../Trunk01")
+bias = 0.5
+disable_collision = false
+
+[node name="TrunkArea01" type="Area2D" parent="TrunkSegment01"]
+position = Vector2(0, -388)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkSegment01/TrunkArea01"]
+position = Vector2(2.5, 69)
+shape = SubResource("CapsuleShape2D_cfvso")
+debug_color = Color(0.792157, 0.419608, 0.239216, 0.419608)
+
+[node name="Stump" type="StaticBody2D" parent="."]
+position = Vector2(0, -66)
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Stump"]
+position = Vector2(1, 1)
+texture = ExtResource("2_gj6ta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stump"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("CircleShape2D_n7uw1")
+
+[connection signal="body_entered" from="TrunkSegment03/TrunkArea03" to="." method="_on_trunk_area_03_body_entered"]
+[connection signal="body_entered" from="TrunkSegment02/TrunkArea02" to="." method="_on_trunk_area_02_body_entered"]
+[connection signal="body_entered" from="TrunkSegment01/TrunkArea01" to="." method="_on_trunk_area_01_body_entered"]

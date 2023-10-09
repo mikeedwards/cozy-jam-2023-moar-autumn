@@ -1,0 +1,55 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Moar Autumn"
+config/tags=PackedStringArray("entries", "prototype")
+run/main_scene="res://World/title.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
+boot_splash/bg_color=Color(0.615686, 0.776471, 0.847059, 1)
+boot_splash/image="res://Assets/logo.png"
+boot_splash/fullsize=false
+config/icon="res://Assets/icon.svg"
+boot_splash/minimum_display_time=500
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1200
+window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="autumn_jam"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_style/plugin.cfg", "res://addons/gut/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_1="trees"
+2d_physics/layer_2="pan"
+2d_physics/layer_3="spirit"
+2d_physics/layer_4="tree_areas"
+2d_physics/layer_5="world"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

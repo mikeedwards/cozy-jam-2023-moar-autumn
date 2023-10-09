@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://coah1v1o3ifg0"]
+
+[ext_resource type="Script" path="res://Pan/pan.gd" id="1_rctmi"]
+[ext_resource type="Texture2D" uid="uid://bs58vaclwngpg" path="res://Assets/fry_pan.png" id="2_upjl6"]
+[ext_resource type="AudioStream" uid="uid://c1wl76arbi0dq" path="res://Assets/woosh1.ogg" id="3_nf3ih"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_22k8l"]
+radius = 50.0
+height = 136.0
+
+[node name="Pan" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_rctmi")
+ANG_SPEED = -20.0
+ANG_ACCEL = -100.0
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, 128)
+texture = ExtResource("2_upjl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 176)
+shape = SubResource("CapsuleShape2D_22k8l")
+debug_color = Color(0.847059, 0.376471, 0, 0.419608)
+
+[node name="WooshAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nf3ih")

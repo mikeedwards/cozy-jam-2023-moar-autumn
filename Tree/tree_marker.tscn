@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2srqcq7ljukn"]
+
+[ext_resource type="Script" path="res://Tree/tree_marker.gd" id="1_sq3u3"]
+
+[node name="OakMarker01" type="Marker2D" groups=["oak"]]
+script = ExtResource("1_sq3u3")
+
+[node name="Enabler" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -480)
+scale = Vector2(10.9, 80)

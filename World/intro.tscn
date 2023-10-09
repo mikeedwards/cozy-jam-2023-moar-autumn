@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c578ntfowyuf6"]
+
+[ext_resource type="Script" path="res://World/intro.gd" id="1_pmpv3"]
+[ext_resource type="Texture2D" uid="uid://dstofuveayk67" path="res://Assets/intro_card_01.png" id="2_d3qdb"]
+[ext_resource type="Texture2D" uid="uid://ckoll3ln2qiby" path="res://Assets/intro_card_02.png" id="3_3xb5n"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_pmpv3")
+
+[node name="IntroCard01" type="Sprite2D" parent="."]
+position = Vector2(958, 601)
+texture = ExtResource("2_d3qdb")
+
+[node name="IntroCard02" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(956, 601)
+texture = ExtResource("3_3xb5n")
